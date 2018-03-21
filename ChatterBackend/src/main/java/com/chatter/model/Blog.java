@@ -30,6 +30,7 @@ public class Blog implements Serializable {
 	Date createdDate;
 	String userName;
 	String status;
+	int likes;
 	
 	public int getBlogId() {
 		return blogId;
@@ -68,6 +69,11 @@ public class Blog implements Serializable {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	
+	public int getLikes() {
+		return likes;
+	}
+	public void setLikes(int likes) {
+		this.likes = likes;
+	}
 
 }

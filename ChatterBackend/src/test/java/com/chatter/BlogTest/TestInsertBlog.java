@@ -41,12 +41,13 @@ public class TestInsertBlog {
 //		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
 //		Date currentDate = dateFormat.parse("2018-03-04");
 		
-//		Blog blog = new Blog();
-//		blog.setBlogName("Test 1");
-//		blog.setBlogContent("This is test blog 1");
-//		blog.setCreatedDate(new Date());
-//		blog.setUserName("Vina");
-//		blog.setStatus("A");
+		/*Blog blog = new Blog();
+		blog.setBlogName("Test 1");
+		blog.setBlogContent("This is test blog 1");
+		blog.setCreatedDate(new Date());
+		blog.setUserName("Vina");
+		blog.setStatus("A");
+		blog.setLikes(0);*/
 		
 		Blog blog = new Blog();
 		blog.setBlogName("Test 2");
@@ -54,6 +55,15 @@ public class TestInsertBlog {
 		blog.setCreatedDate(new Date());
 		blog.setUserName("Shubham");
 		blog.setStatus("NA");
+		blog.setLikes(0);
+		
+		/*Blog blog = new Blog();
+		blog.setBlogName("Test 3");
+		blog.setBlogContent("This is test blog 3");
+		blog.setCreatedDate(new Date());
+		blog.setUserName("Pritam");
+		blog.setStatus("NA");
+		blog.setLikes(0);*/
 		
 		assertTrue(blogDAO.addBlog(blog));
 	}

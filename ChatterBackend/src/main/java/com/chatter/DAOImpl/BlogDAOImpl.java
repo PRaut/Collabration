@@ -66,6 +66,7 @@ public class BlogDAOImpl implements BlogDAO {
 		}
 	}
 
+	@Transactional
 	@Override
 	public Blog getBlog(int blogId) {
 		Blog blog = sessionFactory.getCurrentSession().get(Blog.class, blogId);
