@@ -2,6 +2,7 @@ package com.chatter.DAO;
 
 import java.util.List;
 
+import com.chatter.model.ApplyJob;
 import com.chatter.model.Job;
 
 public interface JobDAO {
@@ -10,4 +11,9 @@ public interface JobDAO {
 	public boolean updateJob(Job job);
 	public List<Job> listJob();
 	public boolean applyJob(Job job);
+	
+	// -----------------------
+	
+	public boolean applyJob(ApplyJob app);
+	public List<ApplyJob> getAllApplicationJobDetails();
 }

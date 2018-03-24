@@ -2,12 +2,15 @@ package com.chatter.DAOImpl;
 
 import java.util.List;
 
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.chatter.DAO.JobDAO;
+import com.chatter.model.ApplyJob;
 import com.chatter.model.Job;
 
 @Repository("JobDAO")
@@ -66,12 +69,30 @@ public class JobDAOImpl implements JobDAO {
 	@Override
 	public boolean applyJob(Job job) {
 		try {
-			//job.setApplyStatus("NA");
+			// job.setApplyStatus("NA");
 			sessionFactory.getCurrentSession().update(job);
 			return true;
 		} catch (Exception e) {
 			return false;
 		}
+	}
+
+	@Transactional
+	public boolean applyJob(ApplyJob app) {
+		try {
+			sessionFactory.getCurrentSession().save(app);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
+	public List<ApplyJob> getAllApplicationJobDetails() {
+		Session session = sessionFactory.openSession();
+		Query query = session.createQuery(" from  ApplyJob");
+		query.list();
+		List<ApplyJob> applyjoblist = query.list();
+		return applyjoblist;
 	}
 
 }
