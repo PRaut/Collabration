@@ -1,6 +1,7 @@
 package com.chatter.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 public class Job implements Serializable{
@@ -22,8 +25,14 @@ public class Job implements Serializable{
 	private String jobTitle;
 	private String jobDescription;
 	private long salary;
-	private String applyStatus;
+	//private String applyStatus;
 	private int noOfOpenings;
+	private String jobDesignation;
+	private String jobLocation;
+	private String company;
+	
+	@JsonFormat(shape= JsonFormat.Shape.STRING, pattern= "dd-MM-yyyy")
+	private Date lastDateToApply;
 	
 	public int getJobId() {
 		return jobId;
@@ -50,12 +59,12 @@ public class Job implements Serializable{
 	public void setSalary(long salary) {
 		this.salary = salary;
 	}
-	public String getApplyStatus() {
+	/*public String getApplyStatus() {
 		return applyStatus;
 	}
 	public void setApplyStatus(String applyStatus) {
 		this.applyStatus = applyStatus;
-	}
+	}*/
 	
 	public int getNoOfOpenings() {
 		return noOfOpenings;
@@ -64,5 +73,39 @@ public class Job implements Serializable{
 	public void setNoOfOpenings(int noOfOpenings) {
 		this.noOfOpenings = noOfOpenings;
 	}
+
+	public String getJobDesignation() {
+		return jobDesignation;
+	}
+
+	public void setJobDesignation(String jobDesignation) {
+		this.jobDesignation = jobDesignation;
+	}
+
+	public String getJobLocation() {
+		return jobLocation;
+	}
+
+	public void setJobLocation(String jobLocation) {
+		this.jobLocation = jobLocation;
+	}
+
+	public String getCompany() {
+		return company;
+	}
+
+	public void setCompany(String company) {
+		this.company = company;
+	}
+
+	public Date getLastDateToApply() {
+		return lastDateToApply;
+	}
+
+	public void setLastDateToApply(Date lastDateToApply) {
+		this.lastDateToApply = lastDateToApply;
+	}
+	
+	
 
 }

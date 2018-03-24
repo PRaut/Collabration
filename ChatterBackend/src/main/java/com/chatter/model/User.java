@@ -13,6 +13,9 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonFormatTypes;
+
 @Entity
 @Table(name= "User_Info")
 public class User implements Serializable{
@@ -31,7 +34,8 @@ public class User implements Serializable{
 	String phone;
 	String address;
 	
-	@Temporal(TemporalType.DATE)
+	//@Temporal(TemporalType.DATE)
+	@JsonFormat(shape= JsonFormat.Shape.STRING, pattern= "dd-MM-yyyyy")
 	@Column(name="openingDate")
 	Date accountOpeningDate;
 	

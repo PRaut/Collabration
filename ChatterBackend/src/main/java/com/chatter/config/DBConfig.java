@@ -54,7 +54,7 @@ public class DBConfig {
 		Properties properties = new Properties();
 		properties.put("hibernate_dialect", HIBERNATE_DIALECT);
 		properties.put("hibernate.show_sql", true);
-		properties.put("hibernate.hbm2ddl.auto", "update");
+		properties.put("hibernate.hbm2ddl.auto", "create");
 		return properties;
 	}
 	

@@ -1,6 +1,8 @@
 package com.chatter.JobTest;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+
+import java.util.Date;
 
 import org.hibernate.SessionFactory;
 import org.junit.BeforeClass;
@@ -35,8 +37,11 @@ public class TestInsertJob {
 		job.setJobTitle("Test Job 1");
 		job.setJobDescription("This is Test Job 1");
 		job.setSalary(10000);
-		job.setApplyStatus("NA");
+		//job.setApplyStatus("NA");
 		job.setNoOfOpenings(2);
+		job.setJobLocation(" ");
+		job.setCompany("");
+		job.setLastDateToApply(new Date());
 		
 		/*Job job = new Job();
 		job.setJobTitle("Test Job 2");

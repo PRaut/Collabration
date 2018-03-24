@@ -66,7 +66,7 @@ public class JobDAOImpl implements JobDAO {
 	@Override
 	public boolean applyJob(Job job) {
 		try {
-			job.setApplyStatus("NA");
+			//job.setApplyStatus("NA");
 			sessionFactory.getCurrentSession().update(job);
 			return true;
 		} catch (Exception e) {

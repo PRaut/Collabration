@@ -49,6 +49,7 @@ public class UserDAOImpl implements UserDAO {
 		}
 	}
 
+	@Transactional
 	@Override
 	public User getUser(int userId) {
 		User user = sessionFactory.getCurrentSession().get(User.class, userId);
