@@ -22,8 +22,11 @@ import com.chatter.DAOImpl.BlogDAOImpl;
 import com.chatter.DAOImpl.ForumDAOImpl;
 import com.chatter.DAOImpl.JobDAOImpl;
 import com.chatter.DAOImpl.UserDAOImpl;
+import com.chatter.model.ApplyJob;
 import com.chatter.model.Blog;
+import com.chatter.model.BlogComment;
 import com.chatter.model.Forum;
+import com.chatter.model.ForumComment;
 import com.chatter.model.Job;
 import com.chatter.model.User;
 
@@ -54,7 +57,7 @@ public class DBConfig {
 		Properties properties = new Properties();
 		properties.put("hibernate_dialect", HIBERNATE_DIALECT);
 		properties.put("hibernate.show_sql", true);
-		properties.put("hibernate.hbm2ddl.auto", "create");
+		properties.put("hibernate.hbm2ddl.auto", "update");
 		return properties;
 	}
 	
@@ -69,6 +72,9 @@ public class DBConfig {
 		sessionFactoryBuilder.addAnnotatedClass(Forum.class);
 		sessionFactoryBuilder.addAnnotatedClass(Job.class);
 		sessionFactoryBuilder.addAnnotatedClass(User.class);
+		sessionFactoryBuilder.addAnnotatedClass(ApplyJob.class);
+		sessionFactoryBuilder.addAnnotatedClass(BlogComment.class);
+		sessionFactoryBuilder.addAnnotatedClass(ForumComment.class);
 		
 		return sessionFactoryBuilder.buildSessionFactory();
 	}
