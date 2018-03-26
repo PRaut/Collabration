@@ -33,19 +33,19 @@ public class TestInsertForum {
 
 	@Test
 	public void testInsertForum() {
-		/*Forum forum = new Forum();
+		Forum forum = new Forum();
 		forum.setForumName("Forum 1");
 		forum.setForumContent("This is forum content 1");
 		forum.setCreatedDate(new Date());
 		forum.setUserName("Forum User 1");
-		forum.setStatus("A");*/
+		forum.setStatus("A");
 		
-		Forum forum = new Forum();
+		/*Forum forum = new Forum();
 		forum.setForumName("Forum 2");
 		forum.setForumContent("This is forum content 2");
 		forum.setCreatedDate(new Date());
 		forum.setUserName("Forum User 2");
-		forum.setStatus("NA");
+		forum.setStatus("NA");*/
 		assertEquals("Insert Forum Failed", true, forumDAO.addForum(forum));
 	}
 }
