@@ -94,6 +94,8 @@ public class BlogDAOImpl implements BlogDAO {
 		return listBlog;
 	}
 
+	// ------------------------------------------ 
+	
 	@Transactional
 	public boolean incrementLikes(Blog blog) {
 		try {
