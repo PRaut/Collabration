@@ -77,6 +77,8 @@ public class JobDAOImpl implements JobDAO {
 		}
 	}
 
+	
+	// ---------------------------------
 	@Transactional
 	public boolean applyJob(ApplyJob app) {
 		try {

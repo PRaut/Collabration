@@ -48,7 +48,5 @@ public class ApplyJob {
 	public void setApplyDate(Date applyDate) {
 		this.applyDate = applyDate;
 	}
-	
-	
 
 }

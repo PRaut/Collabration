@@ -39,8 +39,8 @@ public class TestInsertJob {
 		job.setSalary(10000);
 		//job.setApplyStatus("NA");
 		job.setNoOfOpenings(2);
-		job.setJobLocation(" ");
-		job.setCompany("");
+		job.setJobLocation("Mum");
+		job.setCompany("PR SOLns");
 		job.setLastDateToApply(new Date());
 		
 		/*Job job = new Job();
