@@ -24,6 +24,7 @@ public class BlogComment {
 	int blogId;
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
 	Date commentDate;
+	
 	public int getCommentId() {
 		return commentId;
 	}
