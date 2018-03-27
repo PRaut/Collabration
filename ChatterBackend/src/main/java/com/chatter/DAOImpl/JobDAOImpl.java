@@ -65,7 +65,7 @@ public class JobDAOImpl implements JobDAO {
 		return listJob;
 	}
 
-	@Transactional
+	/*@Transactional
 	@Override
 	public boolean applyJob(Job job) {
 		try {
@@ -75,7 +75,7 @@ public class JobDAOImpl implements JobDAO {
 		} catch (Exception e) {
 			return false;
 		}
-	}
+	}*/
 
 	
 	// ---------------------------------
@@ -91,10 +91,17 @@ public class JobDAOImpl implements JobDAO {
 
 	public List<ApplyJob> getAllApplicationJobDetails() {
 		Session session = sessionFactory.openSession();
-		Query query = session.createQuery(" from  ApplyJob");
+		Query query = session.createQuery("from ApplyJob");
 		query.list();
 		List<ApplyJob> applyjoblist = query.list();
 		return applyjoblist;
+	}
+
+	@Transactional
+	@Override
+	public Job getJob(int jobId) {
+		Job job  = sessionFactory.getCurrentSession().get(Job.class, jobId);
+		return job;
 	}
 
 }
