@@ -1,8 +1,6 @@
 package com.chatter.UserTest;
 
-import static org.junit.Assert.assertEquals;
-
-import java.util.Date;
+import static org.junit.Assert.*;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -12,8 +10,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import com.chatter.DAO.UserDAO;
 import com.chatter.model.User;
 
-public class TestInsertUser {
-
+public class TestUpdateOnlineStatus {
 	@Autowired
 	public static UserDAO userDAO;
 	public static AnnotationConfigApplicationContext context;
@@ -28,19 +25,8 @@ public class TestInsertUser {
 	}
 
 	@Test
-	public void testInsertUser() {
-		User user = new User();
-		user.setUserName("testUser 2");
-		user.setPassword("123");
-		user.setEmail("user2@gmail.com");
-		user.setPhone("98789865");
-		user.setAddress("nag");
-		user.setRole("USER");
-		user.setEnabled(true);
-		user.setIsOnline("N");
-		user.setAccountOpeningDate(new Date());
-
-		assertEquals("Insert User Failed", true, userDAO.insertUser(user));
+	public void testUpdateOnlineStatus(){
+		User user = userDAO.getUser(1);
+		assertTrue("Update status failed",userDAO.updateOnlineStatus("Y", user));
 	}
-
 }

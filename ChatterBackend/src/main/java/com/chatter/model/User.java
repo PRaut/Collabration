@@ -40,6 +40,15 @@ public class User implements Serializable{
 	Date accountOpeningDate;
 	
 	String role;
+	String isOnline;
+	public String getIsOnline() {
+		return isOnline;
+	}
+
+	public void setIsOnline(String isOnline) {
+		this.isOnline = isOnline;
+	}
+
 	boolean enabled;
 
 	public int getUserId() {
